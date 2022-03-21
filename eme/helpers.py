@@ -19,10 +19,3 @@ def add_movie(movies_txt_path: str, movie_title: str) -> None:
     """Appends movie to movie list"""
     with open(movies_txt_path, mode="a", encoding="UTF-8") as movies:
         movies.write(f"{movie_title}\n")
-
-
-def sanitize_movie_title(movie_title: str) -> str:
-    """Removes punctuation and .lower()'s a movie title for easier comparison"""
-    for mark in punctuation:
-        movie_title = movie_title.replace(mark, "")
-    return movie_title.lower()
